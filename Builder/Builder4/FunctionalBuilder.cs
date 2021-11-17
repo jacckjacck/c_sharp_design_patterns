@@ -1,4 +1,8 @@
-﻿namespace Builder4
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Builder4
 {
     internal abstract class FunctionalBuilder<TSubject,T>
         where T : FunctionalBuilder<TSubject, T>

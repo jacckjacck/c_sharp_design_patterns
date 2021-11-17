@@ -1,12 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using BuilderCodingExercise;
 using static System.Console;
 
-WriteLine("Hello, World!");
+namespace BuilderCodingExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
-var cb = new CodeBuilder("Person")
-    .AddField("Name", "string")
-    .AddField("Age", "int");
+            WriteLine("Hello, World!");
 
-WriteLine(cb);
+            var cb = new CodeBuilder("Person")
+                .AddField("Name", "string")
+                .AddField("Age", "int");
+
+            WriteLine(cb);
+        }
+    }
+}
 

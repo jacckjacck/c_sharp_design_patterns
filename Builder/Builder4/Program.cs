@@ -1,8 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Builder4;
+using System;
 
-Console.WriteLine("Hello, World!");
-var person = new PersonBuilder()
-    .Called("John")
-    .WorkAs("Policeman")
-    .Build();
+namespace Builder4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Hello, World!");
+            var person = new PersonBuilder()
+                .Called("John")
+                .WorkAs("Policeman")
+                .Build();
+        }
+    }
+}

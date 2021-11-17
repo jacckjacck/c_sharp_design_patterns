@@ -1,8 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Builder2;
 
-Console.WriteLine("Hello, World!");
 
-var me = Person.New.Called("Jorge").WorkAsA("Developer").Build();
+using System;
 
-Console.WriteLine(me);
+namespace Builder2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+
+            var me = Person.New.Called("Jorge").WorkAsA("Developer").Build();
+
+            Console.WriteLine(me);
+
+        }
+    }
+}

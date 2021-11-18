@@ -7,7 +7,7 @@ namespace Factory
 	{
 		static void Main(string[] args)
 		{
-			var point = Point.NewPolarPoint(1.0, Math.PI/2);
+			var point = PointFactory.NewPolarPoint(1.0, Math.PI/2);
 
 			WriteLine(point);
 		}

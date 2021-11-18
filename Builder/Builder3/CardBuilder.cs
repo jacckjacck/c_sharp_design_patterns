@@ -1,4 +1,6 @@
-﻿namespace Builder3
+﻿using System;
+
+namespace Builder3
 {
     internal class CardBuilder
     {

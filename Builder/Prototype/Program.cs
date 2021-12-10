@@ -13,7 +13,10 @@ namespace Prototype
 			//var jane = (Person)john.Clone();
 			//jane.Names[0] = "Jane";
 			//jane.Address.HouseNumber = 321;
-			var jane = new Person(john);
+			//var jane = new Person(john);
+			//jane.Names[0] = "Jane";
+			//jane.Address.HouseNumber = 321;
+			var jane = john.DeepCopy();
 			jane.Names[0] = "Jane";
 			jane.Address.HouseNumber = 321;
 

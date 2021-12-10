@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-	public class Person
+	public class Person : IPrototype<Person>
 	{
 		public string[] Names { get; set; }
 		public Address Address { get; set; }
@@ -23,9 +23,14 @@ namespace Prototype
 		{
 			return $" {nameof(Names)} : { string.Join(' ', Names)}, {nameof(Address)} : {Address}";
 		}
+
+		public Person DeepCopy()
+		{
+			return new Person(Names, Address.DeepCopy());
+		}
 	}
 
-	public class Address
+	public class Address: IPrototype<Address>
 	{
 		public string StreetName { get; set; }
 		public int HouseNumber { get; set; }
@@ -45,6 +50,11 @@ namespace Prototype
 		public override string ToString()
 		{
 			return $"{nameof(StreetName) }: {StreetName}, {nameof(HouseNumber)} :{HouseNumber} ";
+		}
+
+		public Address DeepCopy()
+		{
+			return new Address(StreetName, HouseNumber);
 		}
 	}
 }

@@ -10,7 +10,10 @@ namespace Prototype
 			var john = new Person(new string[] { "John", "Doe" }, new Address("London Street", 123));
 			//var jane = john;
 			//jane.Names[0] = " Jane";
-			var jane = (Person)john.Clone();
+			//var jane = (Person)john.Clone();
+			//jane.Names[0] = "Jane";
+			//jane.Address.HouseNumber = 321;
+			var jane = new Person(john);
 			jane.Names[0] = "Jane";
 			jane.Address.HouseNumber = 321;
 

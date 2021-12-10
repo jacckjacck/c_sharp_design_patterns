@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-	public class Person : ICloneable
+	public class Person
 	{
 		public string[] Names { get; set; }
 		public Address Address { get; set; }
@@ -13,18 +13,19 @@ namespace Prototype
 			Address = address;
 		}
 
+		public Person(Person other)
+		{
+			Names = other.Names;
+			Address = new Address(other.Address);
+		}
+
 		public override string ToString()
 		{
 			return $" {nameof(Names)} : { string.Join(' ', Names)}, {nameof(Address)} : {Address}";
 		}
-
-		public object Clone()
-		{
-			return new Person((string[]) Names.Clone(), (Address) Address.Clone());
-		}
 	}
 
-	public class Address: ICloneable
+	public class Address
 	{
 		public string StreetName { get; set; }
 		public int HouseNumber { get; set; }
@@ -35,14 +36,15 @@ namespace Prototype
 			HouseNumber = houseNumber;
 		}
 
+		public Address(Address other)
+		{
+			StreetName = other.StreetName;
+			HouseNumber = other.HouseNumber;
+		}
+
 		public override string ToString()
 		{
 			return $"{nameof(StreetName) }: {StreetName}, {nameof(HouseNumber)} :{HouseNumber} ";
-		}
-
-		public object Clone()
-		{
-			return new Address(StreetName, HouseNumber);
 		}
 	}
 }
